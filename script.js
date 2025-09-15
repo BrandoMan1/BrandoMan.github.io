@@ -38,3 +38,36 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Typing effect for hero
+const words = ["Linux Enthusiast", "AWS DevOps", "Full-Stack Developer", "Culinary Expert"];
+let i = 0, j = 0;
+let currentWord = "";
+let isDeleting = false;
+const typingSpeed = 120;
+const typingElement = document.querySelector(".typing");
+
+function type() {
+  if(i >= words.length) i = 0;
+  currentWord = words[i];
+  
+  if(!isDeleting){
+    typingElement.textContent = currentWord.substring(0, j+1);
+    j++;
+    if(j === currentWord.length){
+      isDeleting = true;
+      setTimeout(type, 1000);
+      return;
+    }
+  } else {
+    typingElement.textContent = currentWord.substring(0, j-1);
+    j--;
+    if(j === 0){
+      isDeleting = false;
+      i++;
+    }
+  }
+  setTimeout(type, isDeleting ? typingSpeed/2 : typingSpeed);
+}
+
+type();

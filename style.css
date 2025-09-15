@@ -161,7 +161,43 @@ h2 {
 .project-card a { display: inline-block; margin-top: 0.5rem; color: #a78bfa; text-decoration: none; font-weight: bold; }
 .project-card a:hover { text-decoration: underline; }
 
-/* Skills */
 .skills-list {
   display: flex;
-  flex
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.skills-list li {
+  background: linear-gradient(90deg,#38bdf8,#a78bfa);
+  color: #0f172a;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skills-list li:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Contact */
+#contact p { text-align: center; margin: 10px 0; }
+#contact a { color: #38bdf8; text-decoration: none; }
+#contact a:hover { text-decoration: underline; }
+
+/* Footer */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Fade-in Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
